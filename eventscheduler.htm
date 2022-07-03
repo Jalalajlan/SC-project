@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Event Scheduler & notification</title>
+
+    <!-- Bootstrap CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/event_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <div class="row">
+            <p class="titleOfEvents">Events for today!</p>
+          </div>
+          <div id="content">
+            <div class="evetnCard grid">
+              <p class="titleofEvent">Python workshop</p>
+              <p class="timeofEvent">11:00 AM</p>
+              <p class="dateofEvent">2021-05-4</p>
+            </div>
+            <div class="evetnCard grid">
+              <p class="titleofEvent">Angular Event 3.0</p>
+              <p class="timeofEvent">10:00 AM</p>
+              <p class="dateofEvent">2021-05-4</p>
+            </div>
+            <div class="evetnCard grid">
+              <p class="titleofEvent">World Book Day 2021</p>
+              <p class="timeofEvent">09:00 AM</p>
+              <p class="dateofEvent">2021-05-4</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <form>
+            <div class="row">
+              <p class="dashboard">Arrange Events by:</p>
+            </div>
+            <select id="selectedScheduler" class="form-control">
+              <option value="">sort with</option>
+              <option value="topic">Topic</option>
+              <option value="time">Time</option>
+            </select>
+            <br />
+            <button
+              class="btn btn-primary"
+              id="btnSelectedScheduler"
+              type="button"
+            >
+              Arrange now
+            </button>
+            <br />
+            <button
+              class="btn btn-primary"
+              id="btnShowNotification"
+              type="button"
+            >
+              Show notifications
+            </button>
+            <br />
+          </form>
+
+          <!-- Jquery html -->
+          <br />
+          <br />
+          <form>
+            <div class="row">
+              <p class="dashboard">Add Event:</p>
+            </div>
+            <input
+              type="text"
+              id="titleofEvent"
+              class="form-control"
+              placeholder="Enter title of event"
+              style="margin-bottom: 5px"
+            />
+            <select class="form-control" id="time" style="margin-bottom: 5px">
+              <option value="" selected disabled>select event time</option>
+              <option value="08:00 AM">08:00 AM</option>
+              <option value="09:00 AM">09:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 AM">12:00 AM</option>
+              <option value="01:00 PM">01:00 PM</option>
+            </select>
+            <input
+              placeholder="Date yyyy/mm/dd"
+              type="text"
+              id="dateofEvent"
+              class="form-control"
+            />
+
+            <!-- two Buttons  -->
+
+            <button class="btn btn-primary" id="btnApplyJquery" type="button">
+              Apply with Jquery
+            </button>
+
+            <!-- Javascript Button -->
+            <input
+              class="btn btn-primary"
+              id="btnApplyjs"
+              type="button"
+              value="Apply with JS"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
